@@ -1,0 +1,44 @@
+// VARIABLES PRIMARY
+$lime-green: hsl(163, 72%, 41%);
+$bright-red: hsl(356, 69%, 56%);
+$facebook: hsl(208, 92%, 53%);
+$twitter: hsl(203, 89%, 53%);
+$facebook-linear: hsl(37, 97%, 70%) to hsl(329, 70%, 58%);
+$youtube: hsl(348, 97%, 39%);
+
+// DARK THEME
+$toggle-dark: hsl(210, 78%, 56%) to hsl(146, 68%, 55%);
+$very-dark-blue-BG: hsl(230, 17%, 14%);
+$very-dark-blue-top-BG-pattern: hsl(232, 19%, 15%);
+$dark-desaturated-blue-card-BG: hsl(228, 28%, 20%);
+$desaturated-blue-text: hsl(228, 34%, 66%);
+$white-text: hsl(0, 0%, 100%);
+
+// LIGHT THEME
+$white-BG: hsl(0, 0%, 100%);
+$very-pale-blue-top-BG-pattern: hsl(225, 100%, 98%);
+$light-grayish-blue-card-BG: hsl(227, 47%, 96%);
+$dark-grayish-blue-text: hsl(228, 12%, 44%);
+$very-dark-blue-text: hsl(230, 17%, 14%);
+
+// SITE
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	list-style: none;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-family: 'Inter', sans-serif;
+	display: flex;
+	min-height: 100vh;
+	min-width: 320px;
+}
