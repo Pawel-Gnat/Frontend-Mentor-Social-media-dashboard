@@ -7,11 +7,12 @@ $facebook-linear: hsl(37, 97%, 70%) to hsl(329, 70%, 58%);
 $youtube: hsl(348, 97%, 39%);
 
 // DARK THEME
-$toggle-dark: hsl(210, 78%, 56%) to hsl(146, 68%, 55%);
+$toggle-dark: hsl(210, 78%, 56%), hsl(146, 68%, 55%);
 $very-dark-blue-BG: hsl(230, 17%, 14%);
 $very-dark-blue-top-BG-pattern: hsl(232, 19%, 15%);
 $dark-desaturated-blue-card-BG: hsl(228, 28%, 20%);
 $desaturated-blue-text: hsl(228, 34%, 66%);
+$desaturated-blue-text2: rgba(139, 151, 198, 0.3);
 $white-text: hsl(0, 0%, 100%);
 
 // LIGHT THEME
@@ -39,6 +40,50 @@ html {
 body {
 	font-family: 'Inter', sans-serif;
 	display: flex;
+	flex-direction: column;
+	// justify-content: center;
+	// align-items: center;
 	min-height: 100vh;
 	min-width: 320px;
+	margin: 4rem 2.5rem;
+	background-color: $very-dark-blue-BG;
+}
+
+.heading {
+	display: flex;
+	flex-direction: column;
+	font-weight: 700;
+	color: $desaturated-blue-text;
+	margin-bottom: 4rem;
+
+	&__primary {
+		&--title {
+			text-transform: capitalize;
+			font-size: 2rem;
+			color: $white-text;
+		}
+
+		&--text {
+			font-size: 1.2rem;
+			border-bottom: 1px solid $desaturated-blue-text2;
+			padding: 0.5rem 0 2rem;
+		}
+	}
+
+	&__secondary {
+		display: flex;
+		justify-content: space-between;
+
+		&--text {
+			font-size: 1.2rem;
+		}
+	}
+}
+
+.theme-switch-label {
+	display: flex;
+	width: 5rem;
+	height: 2.5rem;
+	background: linear-gradient(90deg, $toggle-dark);
+	border-radius: 100vmax;
 }

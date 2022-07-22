@@ -18,7 +18,62 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   min-height: 100vh;
   min-width: 320px;
+  margin: 4rem 2.5rem;
+  background-color: #1e202a;
+}
+
+.heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-weight: 700;
+  color: #8b97c6;
+  margin-bottom: 4rem;
+}
+
+.heading__primary--title {
+  text-transform: capitalize;
+  font-size: 2rem;
+  color: white;
+}
+
+.heading__primary--text {
+  font-size: 1.2rem;
+  border-bottom: 1px solid rgba(139, 151, 198, 0.3);
+  padding: 0.5rem 0 2rem;
+}
+
+.heading__secondary {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.heading__secondary--text {
+  font-size: 1.2rem;
+}
+
+.theme-switch-label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 5rem;
+  height: 2.5rem;
+  background: -webkit-gradient(linear, left top, right top, from(#378fe6), to(#3eda82));
+  background: linear-gradient(90deg, #378fe6, #3eda82);
+  border-radius: 100vmax;
 }
 /*# sourceMappingURL=style.css.map */
