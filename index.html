@@ -25,54 +25,81 @@
 					<p class="heading__secondary--text">Dark Mode</p>
 					<div class="heading__secondary--switch">
 						<input type="checkbox" name="theme-switch" id="themeSwitch" class="theme-switch-input">
-						<label for="themeSwitch" class="theme-switch-label"></label>
+						<label for="themeSwitch" class="theme-switch-label">
+							<div class="theme-switch-switcher"></div>
+						</label>
 					</div>
 				</div>
 			</div>
 
 			<div class="general-stats">
 				<div class="stats-card">
-					<img src="./images/icon-facebook.svg" alt="facebook profile link"
-						class="stats-card__image facebook">
-					<span class="stats-card__nickname">@nathanf</span>
+					<div class="stats-card__gradient"></div>
+					<div class="stats-card__media-name">
+						<img src="./images/icon-facebook.svg" alt="facebook profile link"
+							class="stats-card__media-name--image facebook">
+						<span class="stats-card__media-name--nickname">@nathanf</span>
+					</div>
 					<p class="stats-card__number">1987</p>
 					<p class="stats-card__number-info">followers</p>
-					<img src="./images/icon-up.svg" alt="" aria-hidden="true" class="stats-card__growth-icon icon-up">
-					<span class="stats-card__growth-number">12 Today</span>
+					<div class="stats-card__growth">
+						<img src="./images/icon-up.svg" alt="" aria-hidden="true"
+							class="stats-card__growth--icon icon-up">
+						<span class="stats-card__growth--today">12 Today</span>
+					</div>
 				</div>
 
 				<div class="stats-card">
-					<img src="./images/icon-twitter.svg" alt="twitter profile link" class="stats-card__image twitter">
-					<span class="stats-card__nickname">@nathanf</span>
+					<div class="stats-card__gradient"></div>
+					<div class="stats-card__media-name">
+						<img src="./images/icon-twitter.svg" alt="twitter profile link"
+							class="stats-card__media-name--image twitter">
+						<span class="stats-card__media-name--nickname">@nathanf</span>
+					</div>
 					<p class="stats-card__number">1044</p>
 					<p class="stats-card__number-info">followers</p>
-					<img src="./images/icon-up.svg" alt="" aria-hidden="true" class="stats-card__growth-icon icon-up">
-					<span class="stats-card__growth-number">99 Today</span>
+					<div class="stats-card__growth">
+						<img src="./images/icon-up.svg" alt="" aria-hidden="true"
+							class="stats-card__growth--icon icon-up">
+						<span class="stats-card__growth--today">99 Today</span>
+					</div>
 				</div>
 
 				<div class="stats-card">
-					<img src="./images/icon-instagram.svg" alt="instagram profile link"
-						class="stats-card__image instagram">
-					<span class="stats-card__nickname">@realnathanf</span>
+					<div class="stats-card__gradient"></div>
+					<div class="stats-card__media-name">
+						<img src="./images/icon-instagram.svg" alt="instagram profile link"
+							class="stats-card__media-name--image instagram">
+						<span class="stats-card__media-name--nickname">@realnathanf</span>
+					</div>
 					<p class="stats-card__number">11k</p>
 					<p class="stats-card__number-info">followers</p>
-					<img src="./images/icon-up.svg" alt="" aria-hidden="true" class="stats-card__growth-icon icon-up">
-					<span class="stats-card__growth-number">1099 Today</span>
+					<div class="stats-card__growth">
+						<img src="./images/icon-up.svg" alt="" aria-hidden="true"
+							class="stats-card__growth--icon icon-up">
+						<span class="stats-card__growth--today">1099 Today</span>
+					</div>
 				</div>
 
 				<div class="stats-card">
-					<img src="./images/icon-youtube.svg" alt="youtube profile link" class="stats-card__image youtube">
-					<span class="stats-card__nickname">Nathan F.</span>
+					<div class="stats-card__gradient"></div>
+					<div class="stats-card__media-name">
+						<img src="./images/icon-youtube.svg" alt="youtube profile link"
+							class="stats-card__media-name--image youtube">
+						<span class="stats-card__media-name--nickname">Nathan F.</span>
+					</div>
 					<p class="stats-card__number">8239</p>
 					<p class="stats-card__number-info">subscribers</p>
-					<img src="./images/icon-down.svg" alt="" aria-hidden="true"
-						class="stats-card__growth-icon icon-down">
-					<span class="stats-card__growth-number">144 Today</span>
+					<div class="stats-card__growth">
+						<img src="./images/icon-down.svg" alt="" aria-hidden="true"
+							class="stats-card__growth--icon icon-down">
+						<span class="stats-card__growth--today">144 Today</span>
+					</div>
 				</div>
 			</div>
 
 			<div class="overview">
-				<p class="overview__heading">Overview - Today</p>
+				<p class="overview__heading">overview - today</p>
 
 				<div class="overview-card">
 					<div class="overview-card__stats">
@@ -80,11 +107,13 @@
 						<p class="overview-card__stats--number">87</p>
 					</div>
 					<div class="overview-card__media">
-						<img src="./images/icon-facebook.svg" alt="facebook profile link"
-							class="overview-card__media--image facebook">
-						<img src="./images/icon-up.svg" alt="" aria-hidden="true"
-							class="overview-card__media--icon icon-up">
-						<span class="overview-card__media--number">3%</span>
+						<div class="overview-card__media--top">
+							<img src="./images/icon-facebook.svg" alt="facebook profile link" class="facebook">
+						</div>
+						<div class="overview-card__media--bottom">
+							<img src="./images/icon-up.svg" alt="" aria-hidden="true" class="icon-up">
+							<span>3%</span>
+						</div>
 					</div>
 				</div>
 
@@ -94,11 +123,13 @@
 						<p class="overview-card__stats--number">52</p>
 					</div>
 					<div class="overview-card__media">
-						<img src="./images/icon-facebook.svg" alt="facebook profile link"
-							class="overview-card__media--image facebook">
-						<img src="./images/icon-down.svg" alt="" aria-hidden="true"
-							class="overview-card__media--icon icon-down">
-						<span class="overview-card__media--number">2%</span>
+						<div class="overview-card__media--top">
+							<img src="./images/icon-facebook.svg" alt="facebook profile link" class="facebook">
+						</div>
+						<div class="overview-card__media--bottom">
+							<img src="./images/icon-down.svg" alt="" aria-hidden="true" class="icon-down">
+							<span>2%</span>
+						</div>
 					</div>
 				</div>
 
@@ -108,11 +139,13 @@
 						<p class="overview-card__stats--number">5462</p>
 					</div>
 					<div class="overview-card__media">
-						<img src="./images/icon-instagram.svg" alt="instagram profile link"
-							class="overview-card__media--image instagram">
-						<img src="./images/icon-up.svg" alt="" aria-hidden="true"
-							class="overview-card__media--icon icon-up">
-						<span class="overview-card__media--number">2257%</span>
+						<div class="overview-card__media--top">
+							<img src="./images/icon-instagram.svg" alt="instagram profile link" class="instagram">
+						</div>
+						<div class="overview-card__media--bottom">
+							<img src="./images/icon-up.svg" alt="" aria-hidden="true" class="icon-up">
+							<span>2257%</span>
+						</div>
 					</div>
 				</div>
 
@@ -122,11 +155,13 @@
 						<p class="overview-card__stats--number">52k</p>
 					</div>
 					<div class="overview-card__media">
-						<img src="./images/icon-instagram.svg" alt="instagram profile link"
-							class="overview-card__media--image instagram">
-						<img src="./images/icon-up.svg" alt="" aria-hidden="true"
-							class="overview-card__media--icon icon-up">
-						<span class="overview-card__media--number">1375%</span>
+						<div class="overview-card__media--top">
+							<img src="./images/icon-instagram.svg" alt="instagram profile link" class="instagram">
+						</div>
+						<div class="overview-card__media--bottom">
+							<img src="./images/icon-up.svg" alt="" aria-hidden="true" class="icon-up">
+							<span>1357%</span>
+						</div>
 					</div>
 				</div>
 
@@ -136,11 +171,13 @@
 						<p class="overview-card__stats--number">117</p>
 					</div>
 					<div class="overview-card__media">
-						<img src="./images/icon-twitter.svg" alt="twitter profile link"
-							class="overview-card__media--image twitter">
-						<img src="./images/icon-up.svg" alt="" aria-hidden="true"
-							class="overview-card__media--icon icon-up">
-						<span class="overview-card__media--number">303%</span>
+						<div class="overview-card__media--top">
+							<img src="./images/icon-twitter.svg" alt="twitter profile link" class="twitter">
+						</div>
+						<div class="overview-card__media--bottom">
+							<img src="./images/icon-up.svg" alt="" aria-hidden="true" class="icon-up">
+							<span>303%</span>
+						</div>
 					</div>
 				</div>
 
@@ -150,11 +187,13 @@
 						<p class="overview-card__stats--number">507</p>
 					</div>
 					<div class="overview-card__media">
-						<img src="./images/icon-twitter.svg" alt="twitter profile link"
-							class="overview-card__media--image twitter">
-						<img src="./images/icon-up.svg" alt="" aria-hidden="true"
-							class="overview-card__media--icon icon-up">
-						<span class="overview-card__media--number">553%</span>
+						<div class="overview-card__media--top">
+							<img src="./images/icon-twitter.svg" alt="twitter profile link" class="twitter">
+						</div>
+						<div class="overview-card__media--bottom">
+							<img src="./images/icon-up.svg" alt="" aria-hidden="true" class="icon-up">
+							<span>553%</span>
+						</div>
 					</div>
 				</div>
 
@@ -164,11 +203,13 @@
 						<p class="overview-card__stats--number">107</p>
 					</div>
 					<div class="overview-card__media">
-						<img src="./images/icon-youtube.svg" alt="youtube profile link"
-							class="overview-card__media--image youtube">
-						<img src="./images/icon-down.svg" alt="" aria-hidden="true"
-							class="overview-card__media--icon icon-down">
-						<span class="overview-card__media--number">19%</span>
+						<div class="overview-card__media--top">
+							<img src="./images/icon-youtube.svg" alt="youtube profile link" class="youtube">
+						</div>
+						<div class="overview-card__media--bottom">
+							<img src="./images/icon-down.svg" alt="" aria-hidden="true" class="icon-down">
+							<span>19%</span>
+						</div>
 					</div>
 				</div>
 
@@ -178,11 +219,13 @@
 						<p class="overview-card__stats--number">1407</p>
 					</div>
 					<div class="overview-card__media">
-						<img src="./images/icon-youtube.svg" alt="youtube profile link"
-							class="overview-card__media--image youtube">
-						<img src="./images/icon-down.svg" alt="" aria-hidden="true"
-							class="overview-card__media--icon icon-down">
-						<span class="overview-card__media--number">12%</span>
+						<div class="overview-card__media--top">
+							<img src="./images/icon-youtube.svg" alt="youtube profile link" class="youtube">
+						</div>
+						<div class="overview-card__media--bottom">
+							<img src="./images/icon-down.svg" alt="" aria-hidden="true" class="icon-down">
+							<span>2257%</span>
+						</div>
 					</div>
 				</div>
 			</div>

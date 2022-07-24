@@ -3,7 +3,7 @@ $lime-green: hsl(163, 72%, 41%);
 $bright-red: hsl(356, 69%, 56%);
 $facebook: hsl(208, 92%, 53%);
 $twitter: hsl(203, 89%, 53%);
-$facebook-linear: hsl(37, 97%, 70%) to hsl(329, 70%, 58%);
+$instagram-linear: hsl(37, 97%, 70%), hsl(329, 70%, 58%);
 $youtube: hsl(348, 97%, 39%);
 
 // DARK THEME
@@ -41,20 +41,19 @@ body {
 	font-family: 'Inter', sans-serif;
 	display: flex;
 	flex-direction: column;
-	// justify-content: center;
-	// align-items: center;
 	min-height: 100vh;
 	min-width: 320px;
-	margin: 4rem 2.5rem;
+	margin: 4rem 0rem;
 	background-color: $very-dark-blue-BG;
 }
 
 .heading {
+	//social media section with theme switcher
 	display: flex;
 	flex-direction: column;
 	font-weight: 700;
 	color: $desaturated-blue-text;
-	margin-bottom: 4rem;
+	margin: 0 2.5rem 4rem;
 
 	&__primary {
 		&--title {
@@ -73,6 +72,8 @@ body {
 	&__secondary {
 		display: flex;
 		justify-content: space-between;
+		margin-top: 1.5rem;
+		align-items: center;
 
 		&--text {
 			font-size: 1.2rem;
@@ -80,10 +81,177 @@ body {
 	}
 }
 
+.theme-switch-input {
+	// theme switch input
+	position: absolute;
+	width: 5rem;
+	height: 2.5rem;
+}
+
 .theme-switch-label {
+	// switch background label for theme switcher
+	position: relative;
 	display: flex;
 	width: 5rem;
 	height: 2.5rem;
 	background: linear-gradient(90deg, $toggle-dark);
 	border-radius: 100vmax;
 }
+
+.theme-switch-switcher {
+	// "ball" shape knob to switch theme
+	position: absolute;
+	top: 0.3rem;
+	left: 0.3rem;
+	height: 2rem;
+	width: 2rem;
+	border-radius: 50%;
+	background-color: $very-dark-blue-BG;
+	transition: transform 0.2s;
+}
+
+.theme-switch-input:checked + .theme-switch-label .theme-switch-switcher {
+	// animation of "ball" shape knob
+	transform: translateX(2.4rem);
+}
+
+// SOCIAL MEDIA STATISTIC BIG CARDS
+
+.general-stats {
+	display: flex;
+	flex-flow: wrap;
+	justify-content: center;
+	margin-bottom: 2.5rem;
+}
+
+.stats-card {
+	width: 100%;
+	max-width: 33rem;
+	height: 22rem;
+	border-radius: 0.5rem;
+	margin: 0 2.5rem 2.5rem;
+	background-color: $dark-desaturated-blue-card-BG;
+	text-align: center;
+	overflow: hidden;
+
+	&__gradient {
+		width: 100%;
+		height: 0.4rem;
+		background-color: $facebook;
+	}
+
+	&__media-name {
+		font-weight: 700;
+		font-size: 1.2rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 0.5rem;
+		margin: 2.5rem;
+		color: $desaturated-blue-text;
+	}
+
+	&__number {
+		font-weight: 700;
+		font-size: 5.6rem;
+		color: $white-text;
+	}
+
+	&__number-info {
+		text-transform: uppercase;
+		font-size: 1.2rem;
+		letter-spacing: 0.5rem;
+		color: $desaturated-blue-text;
+	}
+
+	&__growth {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 0.5rem;
+		margin: 2.5rem;
+
+		&--today {
+			font-weight: 700;
+			font-size: 1.2rem;
+			color: $white-text;
+		}
+	}
+}
+
+.stats-card:nth-of-type(3) .stats-card__gradient {
+	background: linear-gradient(90deg, $instagram-linear);
+}
+
+.stats-card:nth-of-type(4) .stats-card__gradient {
+	background-color: red;
+}
+
+.stats-card:nth-of-type(2) .stats-card__growth .stats-card__growth--today,
+.stats-card:nth-of-type(3) .stats-card__growth .stats-card__growth--today {
+	color: $lime-green;
+}
+
+.stats-card:nth-of-type(4) .stats-card__growth .stats-card__growth--today {
+	color: $bright-red;
+}
+
+.overview {
+	font-weight: 700;
+	margin: 0 2.5rem 4rem;
+
+	&__heading {
+		text-transform: capitalize;
+		font-size: 2rem;
+		color: $white-text;
+		margin-bottom: 1rem;
+	}
+}
+
+.overview-card {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: auto;
+	width: 100%;
+	max-width: 33rem;
+	height: 13rem;
+	border-radius: 0.5rem;
+	padding: 2.5rem;
+	margin-bottom: 1.5rem;
+	background-color: $dark-desaturated-blue-card-BG;
+
+	&__stats {
+		grid-area: 1 / 1 / 2 / 2;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		font-size: 1.2rem;
+
+		&--text {
+			color: $desaturated-blue-text;
+		}
+
+		&--number {
+			font-size: 2.7rem;
+			color: $white-text;
+		}
+	}
+
+	&__media {
+		grid-area: 1 / 2 / 2 / 3;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: flex-end;
+
+		&--bottom {
+			display: flex;
+			flex-direction: row;
+			gap: 0.5rem;
+			align-items: center;
+			color: $lime-green;
+		}
+	}
+}
+
+// need to finish my css color red styling
