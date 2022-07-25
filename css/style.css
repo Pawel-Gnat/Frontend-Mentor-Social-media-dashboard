@@ -1,3 +1,7 @@
+/* VARIABLES PRIMARY */
+/* DARK THEME */
+/* LIGHT THEME */
+/* SITE */
 *,
 *::after,
 *::before {
@@ -23,9 +27,14 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   min-height: 100vh;
-  min-width: 320px;
   margin: 4rem 0rem;
+  padding: 0 2.5rem;
   background-color: #1e202a;
+}
+
+.wrapper {
+  max-width: 111rem;
+  margin: auto;
 }
 
 .heading {
@@ -38,7 +47,7 @@ body {
           flex-direction: column;
   font-weight: 700;
   color: #8b97c6;
-  margin: 0 2.5rem 4rem;
+  margin-bottom: 4rem;
 }
 
 .heading__primary--title {
@@ -74,6 +83,7 @@ body {
   position: absolute;
   width: 5rem;
   height: 2.5rem;
+  opacity: 0;
 }
 
 .theme-switch-label {
@@ -86,11 +96,15 @@ body {
   background: -webkit-gradient(linear, left top, right top, from(#378fe6), to(#3eda82));
   background: linear-gradient(90deg, #378fe6, #3eda82);
   border-radius: 100vmax;
+  opacity: 0.8;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  cursor: pointer;
 }
 
 .theme-switch-switcher {
   position: absolute;
-  top: 0.3rem;
+  top: 0.225rem;
   left: 0.3rem;
   height: 2rem;
   width: 2rem;
@@ -107,6 +121,7 @@ body {
           transform: translateX(2.4rem);
 }
 
+/* SOCIAL MEDIA STATISTIC BIG CARDS */
 .general-stats {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -116,18 +131,27 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  gap: 2.5rem;
   margin-bottom: 2.5rem;
 }
 
 .stats-card {
+  position: relative;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-preferred-size: 25.5rem;
+      flex-basis: 25.5rem;
   width: 100%;
   max-width: 33rem;
   height: 22rem;
   border-radius: 0.5rem;
-  margin: 0 2.5rem 2.5rem;
   background-color: #252a41;
   text-align: center;
   overflow: hidden;
+  -webkit-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+  cursor: pointer;
 }
 
 .stats-card__gradient {
@@ -204,19 +228,36 @@ body {
   color: #dc414c;
 }
 
+/* OVERVIEW WEBSITE SECTION */
 .overview {
   font-weight: 700;
-  margin: 0 2.5rem 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: wrap;
+      flex-flow: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 4rem;
 }
 
 .overview__heading {
+  width: 100%;
+  -ms-grid-column-align: start;
+      justify-self: start;
   text-transform: capitalize;
   font-size: 2rem;
   color: white;
-  margin-bottom: 1rem;
 }
 
 .overview-card {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-preferred-size: 25.5rem;
+      flex-basis: 25.5rem;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[2];
@@ -228,8 +269,10 @@ body {
   height: 13rem;
   border-radius: 0.5rem;
   padding: 2.5rem;
-  margin-bottom: 1.5rem;
   background-color: #252a41;
+  -webkit-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+  cursor: pointer;
 }
 
 .overview-card__stats {
@@ -294,5 +337,77 @@ body {
       -ms-flex-align: center;
           align-items: center;
   color: #1db489;
+}
+
+.overview-card:nth-of-type(2) .overview-card__media .overview-card__media--bottom,
+.overview-card:nth-of-type(7) .overview-card__media .overview-card__media--bottom,
+.overview-card:nth-of-type(8) .overview-card__media .overview-card__media--bottom {
+  color: #dc414c;
+}
+
+footer {
+  text-align: center;
+  color: #8b97c6;
+}
+
+footer a {
+  color: #dc414c;
+}
+
+/* HOVERS */
+.theme-switch-label:hover {
+  opacity: 1;
+}
+
+.stats-card:hover,
+.overview-card:hover {
+  background-color: #2e3552;
+}
+
+/* WHITE MODE */
+body.white {
+  background-color: white;
+}
+
+/* MEDIA QUERIES */
+@media (min-width: 575px) {
+  .overview {
+    gap: 3rem;
+  }
+}
+
+@media (min-width: 600px) {
+  .general-stats {
+    gap: 3rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .heading {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .heading__primary--text {
+    border-bottom: 0;
+    padding: 0.5rem 0 0rem;
+  }
+  .heading__secondary {
+    gap: 1.5rem;
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .heading__primary--title {
+    font-size: 2.4rem;
+  }
+  .overview__heading {
+    font-size: 2.4rem;
+  }
 }
 /*# sourceMappingURL=style.css.map */

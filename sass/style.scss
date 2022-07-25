@@ -1,4 +1,4 @@
-// VARIABLES PRIMARY
+/* VARIABLES PRIMARY */
 $lime-green: hsl(163, 72%, 41%);
 $bright-red: hsl(356, 69%, 56%);
 $facebook: hsl(208, 92%, 53%);
@@ -6,23 +6,24 @@ $twitter: hsl(203, 89%, 53%);
 $instagram-linear: hsl(37, 97%, 70%), hsl(329, 70%, 58%);
 $youtube: hsl(348, 97%, 39%);
 
-// DARK THEME
+/* DARK THEME */
 $toggle-dark: hsl(210, 78%, 56%), hsl(146, 68%, 55%);
 $very-dark-blue-BG: hsl(230, 17%, 14%);
 $very-dark-blue-top-BG-pattern: hsl(232, 19%, 15%);
 $dark-desaturated-blue-card-BG: hsl(228, 28%, 20%);
+$dark-desaturated-blue-card-BG-hover: hsl(228, 28%, 25%);
 $desaturated-blue-text: hsl(228, 34%, 66%);
 $desaturated-blue-text2: rgba(139, 151, 198, 0.3);
 $white-text: hsl(0, 0%, 100%);
 
-// LIGHT THEME
+/* LIGHT THEME */
 $white-BG: hsl(0, 0%, 100%);
 $very-pale-blue-top-BG-pattern: hsl(225, 100%, 98%);
 $light-grayish-blue-card-BG: hsl(227, 47%, 96%);
 $dark-grayish-blue-text: hsl(228, 12%, 44%);
 $very-dark-blue-text: hsl(230, 17%, 14%);
 
-// SITE
+/* SITE */
 *,
 *::after,
 *::before {
@@ -42,9 +43,15 @@ body {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
-	min-width: 320px;
 	margin: 4rem 0rem;
+	padding: 0 2.5rem;
 	background-color: $very-dark-blue-BG;
+}
+
+.wrapper {
+	// section class, used just to set max width and center horizontally all content
+	max-width: 111rem;
+	margin: auto;
 }
 
 .heading {
@@ -52,8 +59,9 @@ body {
 	display: flex;
 	flex-direction: column;
 	font-weight: 700;
+	// background-color: $very-dark-blue-top-BG-pattern;
 	color: $desaturated-blue-text;
-	margin: 0 2.5rem 4rem;
+	margin-bottom: 4rem;
 
 	&__primary {
 		&--title {
@@ -86,6 +94,7 @@ body {
 	position: absolute;
 	width: 5rem;
 	height: 2.5rem;
+	opacity: 0;
 }
 
 .theme-switch-label {
@@ -96,12 +105,15 @@ body {
 	height: 2.5rem;
 	background: linear-gradient(90deg, $toggle-dark);
 	border-radius: 100vmax;
+	opacity: 0.8;
+	transition: opacity 0.3s;
+	cursor: pointer;
 }
 
 .theme-switch-switcher {
 	// "ball" shape knob to switch theme
 	position: absolute;
-	top: 0.3rem;
+	top: 0.225rem;
 	left: 0.3rem;
 	height: 2rem;
 	width: 2rem;
@@ -115,24 +127,30 @@ body {
 	transform: translateX(2.4rem);
 }
 
-// SOCIAL MEDIA STATISTIC BIG CARDS
+/* SOCIAL MEDIA STATISTIC BIG CARDS */
 
 .general-stats {
 	display: flex;
 	flex-flow: wrap;
 	justify-content: center;
+	gap: 2.5rem;
 	margin-bottom: 2.5rem;
 }
 
 .stats-card {
+	// styling area for one of my cards
+	position: relative;
+	flex-grow: 1;
+	flex-basis: 25.5rem;
 	width: 100%;
 	max-width: 33rem;
 	height: 22rem;
 	border-radius: 0.5rem;
-	margin: 0 2.5rem 2.5rem;
 	background-color: $dark-desaturated-blue-card-BG;
 	text-align: center;
 	overflow: hidden;
+	transition: background-color 0.5s;
+	cursor: pointer;
 
 	&__gradient {
 		width: 100%;
@@ -196,19 +214,29 @@ body {
 	color: $bright-red;
 }
 
+/* OVERVIEW WEBSITE SECTION */
+
 .overview {
 	font-weight: 700;
-	margin: 0 2.5rem 4rem;
+	display: flex;
+	flex-flow: wrap;
+	justify-content: center;
+	gap: 1.5rem;
+	margin-bottom: 4rem;
 
 	&__heading {
+		width: 100%;
+		justify-self: start;
 		text-transform: capitalize;
 		font-size: 2rem;
 		color: $white-text;
-		margin-bottom: 1rem;
 	}
 }
 
 .overview-card {
+	// styling area for one of my cards
+	flex-grow: 1;
+	flex-basis: 25.5rem;
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	grid-template-rows: auto;
@@ -217,8 +245,9 @@ body {
 	height: 13rem;
 	border-radius: 0.5rem;
 	padding: 2.5rem;
-	margin-bottom: 1.5rem;
 	background-color: $dark-desaturated-blue-card-BG;
+	transition: background-color 0.5s;
+	cursor: pointer;
 
 	&__stats {
 		grid-area: 1 / 1 / 2 / 2;
@@ -254,4 +283,83 @@ body {
 	}
 }
 
-// need to finish my css color red styling
+.overview-card:nth-of-type(2) .overview-card__media .overview-card__media--bottom,
+.overview-card:nth-of-type(7) .overview-card__media .overview-card__media--bottom,
+.overview-card:nth-of-type(8) .overview-card__media .overview-card__media--bottom {
+	color: $bright-red;
+}
+
+footer {
+	text-align: center;
+	color: $desaturated-blue-text;
+
+	a {
+		color: $bright-red;
+	}
+}
+
+/* HOVERS */
+
+.theme-switch-label:hover {
+	opacity: 1;
+}
+
+.stats-card:hover,
+.overview-card:hover {
+	background-color: $dark-desaturated-blue-card-BG-hover;
+}
+
+/* WHITE MODE */
+
+body.white {
+	background-color: $white-BG;
+}
+
+/* MEDIA QUERIES */
+
+@media (min-width: 575px) {
+	.overview {
+		gap: 3rem;
+	}
+}
+
+@media (min-width: 600px) {
+	.general-stats {
+		gap: 3rem;
+	}
+}
+
+@media (min-width: 768px) {
+	.heading {
+		flex-direction: row;
+		justify-content: space-between;
+
+		&__primary {
+			&--text {
+				border-bottom: 0;
+				padding: 0.5rem 0 0rem;
+			}
+		}
+
+		&__secondary {
+			gap: 1.5rem;
+			margin-top: 0;
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.heading {
+		&__primary {
+			&--title {
+				font-size: 2.4rem;
+			}
+		}
+	}
+
+	.overview {
+		&__heading {
+			font-size: 2.4rem;
+		}
+	}
+}
