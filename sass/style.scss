@@ -11,7 +11,7 @@ $toggle-dark: hsl(210, 78%, 56%), hsl(146, 68%, 55%);
 $very-dark-blue-BG: hsl(230, 17%, 14%);
 $very-dark-blue-top-BG-pattern: hsl(232, 19%, 15%);
 $dark-desaturated-blue-card-BG: hsl(228, 28%, 20%);
-$dark-desaturated-blue-card-BG-hover: hsl(228, 28%, 25%);
+$dark-desaturated-blue-card-BG-hover: hsl(228, 28%, 30%);
 $desaturated-blue-text: hsl(228, 34%, 66%);
 $desaturated-blue-text2: rgba(139, 151, 198, 0.3);
 $white-text: hsl(0, 0%, 100%);
@@ -20,6 +20,7 @@ $white-text: hsl(0, 0%, 100%);
 $white-BG: hsl(0, 0%, 100%);
 $very-pale-blue-top-BG-pattern: hsl(225, 100%, 98%);
 $light-grayish-blue-card-BG: hsl(227, 47%, 96%);
+$light-grayish-blue-card-BG-hover: hsl(225, 16%, 90%);
 $dark-grayish-blue-text: hsl(228, 12%, 44%);
 $very-dark-blue-text: hsl(230, 17%, 14%);
 
@@ -46,7 +47,22 @@ body {
 	margin: 4rem 0rem;
 	padding: 0 2.5rem;
 	background-color: $very-dark-blue-BG;
+	transition: background-color 0.5s;
 }
+
+/* HEADING BACKGROUND */
+
+.heading-bg {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 24rem;
+	background-color: $very-dark-blue-top-BG-pattern;
+	z-index: -1;
+	transition: background-color 0.5s;
+}
+
+/* SECTION */
 
 .wrapper {
 	// section class, used just to set max width and center horizontally all content
@@ -59,15 +75,12 @@ body {
 	display: flex;
 	flex-direction: column;
 	font-weight: 700;
-	// background-color: $very-dark-blue-top-BG-pattern;
-	color: $desaturated-blue-text;
 	margin-bottom: 4rem;
 
 	&__primary {
 		&--title {
 			text-transform: capitalize;
 			font-size: 2rem;
-			color: $white-text;
 		}
 
 		&--text {
@@ -106,7 +119,6 @@ body {
 	background: linear-gradient(90deg, $toggle-dark);
 	border-radius: 100vmax;
 	opacity: 0.8;
-	transition: opacity 0.3s;
 	cursor: pointer;
 }
 
@@ -134,7 +146,7 @@ body {
 	flex-flow: wrap;
 	justify-content: center;
 	gap: 2.5rem;
-	margin-bottom: 2.5rem;
+	margin-bottom: 4.5rem;
 }
 
 .stats-card {
@@ -146,7 +158,6 @@ body {
 	max-width: 33rem;
 	height: 22rem;
 	border-radius: 0.5rem;
-	background-color: $dark-desaturated-blue-card-BG;
 	text-align: center;
 	overflow: hidden;
 	transition: background-color 0.5s;
@@ -166,20 +177,17 @@ body {
 		align-items: center;
 		gap: 0.5rem;
 		margin: 2.5rem;
-		color: $desaturated-blue-text;
 	}
 
 	&__number {
 		font-weight: 700;
 		font-size: 5.6rem;
-		color: $white-text;
 	}
 
 	&__number-info {
 		text-transform: uppercase;
 		font-size: 1.2rem;
 		letter-spacing: 0.5rem;
-		color: $desaturated-blue-text;
 	}
 
 	&__growth {
@@ -192,7 +200,7 @@ body {
 		&--today {
 			font-weight: 700;
 			font-size: 1.2rem;
-			color: $white-text;
+			color: $lime-green;
 		}
 	}
 }
@@ -203,11 +211,6 @@ body {
 
 .stats-card:nth-of-type(4) .stats-card__gradient {
 	background-color: red;
-}
-
-.stats-card:nth-of-type(2) .stats-card__growth .stats-card__growth--today,
-.stats-card:nth-of-type(3) .stats-card__growth .stats-card__growth--today {
-	color: $lime-green;
 }
 
 .stats-card:nth-of-type(4) .stats-card__growth .stats-card__growth--today {
@@ -230,6 +233,7 @@ body {
 		text-transform: capitalize;
 		font-size: 2rem;
 		color: $white-text;
+		transition: color 0.5s;
 	}
 }
 
@@ -245,7 +249,6 @@ body {
 	height: 13rem;
 	border-radius: 0.5rem;
 	padding: 2.5rem;
-	background-color: $dark-desaturated-blue-card-BG;
 	transition: background-color 0.5s;
 	cursor: pointer;
 
@@ -256,13 +259,8 @@ body {
 		justify-content: space-between;
 		font-size: 1.2rem;
 
-		&--text {
-			color: $desaturated-blue-text;
-		}
-
 		&--number {
 			font-size: 2.7rem;
-			color: $white-text;
 		}
 	}
 
@@ -304,15 +302,66 @@ footer {
 	opacity: 1;
 }
 
-.stats-card:hover,
-.overview-card:hover {
+.theme-switch-label.white:hover {
+	background: linear-gradient(90deg, $toggle-dark);
+}
+
+.card:hover {
 	background-color: $dark-desaturated-blue-card-BG-hover;
+}
+
+.card.white:hover {
+	background-color: $light-grayish-blue-card-BG-hover;
+}
+
+/* DARK MODE */
+
+.general-text {
+	color: $white-text;
+	transition: color 0.5s;
+}
+
+.secondary-text {
+	color: $desaturated-blue-text;
+	transition: color 0.5s;
+}
+
+.card {
+	background-color: $dark-desaturated-blue-card-BG;
 }
 
 /* WHITE MODE */
 
 body.white {
 	background-color: $white-BG;
+}
+
+.general-text.white {
+	color: $very-dark-blue-text;
+}
+
+.secondary-text.white {
+	color: $dark-grayish-blue-text;
+}
+
+.heading-bg.white {
+	background-color: $very-pale-blue-top-BG-pattern;
+}
+
+.theme-switch-label.white {
+	background: $dark-grayish-blue-text;
+}
+
+.theme-switch-switcher.white {
+	background-color: $white-BG;
+}
+
+.card.white {
+	background-color: $light-grayish-blue-card-BG;
+}
+
+.overview__heading.white {
+	color: $dark-grayish-blue-text;
 }
 
 /* MEDIA QUERIES */
@@ -359,7 +408,7 @@ body.white {
 
 	.overview {
 		&__heading {
-			font-size: 2.4rem;
+			font-size: 2.2rem;
 		}
 	}
 }

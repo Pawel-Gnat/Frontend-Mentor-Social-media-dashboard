@@ -30,8 +30,23 @@ body {
   margin: 4rem 0rem;
   padding: 0 2.5rem;
   background-color: #1e202a;
+  -webkit-transition: background-color 0.5s;
+  transition: background-color 0.5s;
 }
 
+/* HEADING BACKGROUND */
+.heading-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 24rem;
+  background-color: #1f212e;
+  z-index: -1;
+  -webkit-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+}
+
+/* SECTION */
 .wrapper {
   max-width: 111rem;
   margin: auto;
@@ -46,14 +61,12 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   font-weight: 700;
-  color: #8b97c6;
   margin-bottom: 4rem;
 }
 
 .heading__primary--title {
   text-transform: capitalize;
   font-size: 2rem;
-  color: white;
 }
 
 .heading__primary--text {
@@ -97,8 +110,6 @@ body {
   background: linear-gradient(90deg, #378fe6, #3eda82);
   border-radius: 100vmax;
   opacity: 0.8;
-  -webkit-transition: opacity 0.3s;
-  transition: opacity 0.3s;
   cursor: pointer;
 }
 
@@ -132,7 +143,7 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   gap: 2.5rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 4.5rem;
 }
 
 .stats-card {
@@ -146,7 +157,6 @@ body {
   max-width: 33rem;
   height: 22rem;
   border-radius: 0.5rem;
-  background-color: #252a41;
   text-align: center;
   overflow: hidden;
   -webkit-transition: background-color 0.5s;
@@ -174,20 +184,17 @@ body {
           align-items: center;
   gap: 0.5rem;
   margin: 2.5rem;
-  color: #8b97c6;
 }
 
 .stats-card__number {
   font-weight: 700;
   font-size: 5.6rem;
-  color: white;
 }
 
 .stats-card__number-info {
   text-transform: uppercase;
   font-size: 1.2rem;
   letter-spacing: 0.5rem;
-  color: #8b97c6;
 }
 
 .stats-card__growth {
@@ -207,7 +214,7 @@ body {
 .stats-card__growth--today {
   font-weight: 700;
   font-size: 1.2rem;
-  color: white;
+  color: #1db489;
 }
 
 .stats-card:nth-of-type(3) .stats-card__gradient {
@@ -217,11 +224,6 @@ body {
 
 .stats-card:nth-of-type(4) .stats-card__gradient {
   background-color: red;
-}
-
-.stats-card:nth-of-type(2) .stats-card__growth .stats-card__growth--today,
-.stats-card:nth-of-type(3) .stats-card__growth .stats-card__growth--today {
-  color: #1db489;
 }
 
 .stats-card:nth-of-type(4) .stats-card__growth .stats-card__growth--today {
@@ -250,6 +252,8 @@ body {
   text-transform: capitalize;
   font-size: 2rem;
   color: white;
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
 }
 
 .overview-card {
@@ -269,7 +273,6 @@ body {
   height: 13rem;
   border-radius: 0.5rem;
   padding: 2.5rem;
-  background-color: #252a41;
   -webkit-transition: background-color 0.5s;
   transition: background-color 0.5s;
   cursor: pointer;
@@ -294,13 +297,8 @@ body {
   font-size: 1.2rem;
 }
 
-.overview-card__stats--text {
-  color: #8b97c6;
-}
-
 .overview-card__stats--number {
   font-size: 2.7rem;
-  color: white;
 }
 
 .overview-card__media {
@@ -359,14 +357,67 @@ footer a {
   opacity: 1;
 }
 
-.stats-card:hover,
-.overview-card:hover {
-  background-color: #2e3552;
+.theme-switch-label.white:hover {
+  background: -webkit-gradient(linear, left top, right top, from(#378fe6), to(#3eda82));
+  background: linear-gradient(90deg, #378fe6, #3eda82);
+}
+
+.card:hover {
+  background-color: #374062;
+}
+
+.card.white:hover {
+  background-color: #e1e3ea;
+}
+
+/* DARK MODE */
+.general-text {
+  color: white;
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
+}
+
+.secondary-text {
+  color: #8b97c6;
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
+}
+
+.card {
+  background-color: #252a41;
 }
 
 /* WHITE MODE */
 body.white {
   background-color: white;
+}
+
+.general-text.white {
+  color: #1e202a;
+}
+
+.secondary-text.white {
+  color: #63687e;
+}
+
+.heading-bg.white {
+  background-color: #f5f7ff;
+}
+
+.theme-switch-label.white {
+  background: #63687e;
+}
+
+.theme-switch-switcher.white {
+  background-color: white;
+}
+
+.card.white {
+  background-color: #f0f2fa;
+}
+
+.overview__heading.white {
+  color: #63687e;
 }
 
 /* MEDIA QUERIES */
@@ -407,7 +458,7 @@ body.white {
     font-size: 2.4rem;
   }
   .overview__heading {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
   }
 }
 /*# sourceMappingURL=style.css.map */
